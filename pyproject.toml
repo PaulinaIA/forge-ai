@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forge-ai"
+version = "0.1.0"
+description = "LLM-powered ML Engineering assistant — RAG, agents, and tools for the full ML workflow"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Paulina Peralta", email = "pauliperalta97@gmail.com"}
+]
+keywords = ["llm", "agents", "rag", "langchain", "mlops", "machine-learning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    # LLM — OpenAI-compatible SDK (works with Groq, Gemini, OpenAI)
+    "openai>=1.0.0",
+
+    # Agent framework
+    "langchain>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "langchain-community>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langgraph>=0.1.0",
+
+    # RAG
+    "chromadb>=0.5.0",
+    "sentence-transformers>=3.0.0",
+
+    # Data analysis tools
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scikit-learn>=1.4.0",
+    "scipy>=1.12.0",
+
+    # UI
+    "streamlit>=1.38.0",
+
+    # Config
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+
+    # API & Frontend Integration
+    "fastapi>=0.111.0",
+    "uvicorn>=0.30.0",
+    "python-multipart>=0.0.9",
+    "requests>=2.32.0",
+    
+    # MLOps
+    "mlflow>=2.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=5.0.0",
+    "ruff>=0.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/PaulinaIA/forge-ai"
+Repository = "https://github.com/PaulinaIA/forge-ai"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["forge_ai*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
