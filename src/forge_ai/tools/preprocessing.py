@@ -3,14 +3,10 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import TYPE_CHECKING
-
 from langchain_core.tools import tool
 
 from forge_ai.io import read_csv_smart
 
-if TYPE_CHECKING:  # pragma: no cover
-    import pandas as pd
 
 
 @tool

@@ -1,7 +1,6 @@
 """Demo script — CLI interaction with the Forge agent."""
 
 import argparse
-import os
 import sys
 from pathlib import Path
 
@@ -16,7 +15,7 @@ if SRC.exists():
 
 load_dotenv()
 
-from forge_ai import ForgeAgent
+from forge_ai import ForgeAgent  # noqa: E402
 
 
 def main():

@@ -7,7 +7,6 @@ tool visualization, and conversation history. Integrates with the FastAPI backen
 import os
 import sys
 import uuid
-import tempfile
 from pathlib import Path
 import requests
 

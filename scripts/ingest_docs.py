@@ -17,7 +17,7 @@ if SRC.exists():
     if src_str not in sys.path:
         sys.path.insert(0, src_str)
 
-from forge_ai.rag.ingest import ingest_docs
+from forge_ai.rag.ingest import ingest_docs  # noqa: E402
 
 
 def main() -> None:
